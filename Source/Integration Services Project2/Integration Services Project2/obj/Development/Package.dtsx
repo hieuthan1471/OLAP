@@ -1,0 +1,2115 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/13/2022 11:37:27 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ID9RBP3"
+  DTS:CreatorName="DESKTOP-ID9RBP3\Windows 10"
+  DTS:DTSID="{1F23A3BE-574D-4A35-A537-5281BD6B7A14}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{84067E6C-C217-437D-8811-A1ADE8E45961}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ID9RBP3.datatest]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9C48AE82-E6EC-4D3F-8E4A-7FE86F1490B6}"
+      DTS:ObjectName="DESKTOP-ID9RBP3.datatest">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-ID9RBP3;Initial Catalog=datatest;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ID9RBP3.datatest 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2A3203C2-4464-4B8F-BA1B-586D02C625D0}"
+      DTS:ObjectName="DESKTOP-ID9RBP3.datatest 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-ID9RBP3;Initial Catalog=datatest;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7D7ED65C-FF76-40E9-9B4F-7E9EBF75A804}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Download\MyAnimeList-Database-master\MyAnimeList-Database-master\data\anime_data.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MAL_ID"
+              DTS:DTSID="{2AC82A8A-1E74-4414-8FAC-61E21219ACBB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{0BCF832A-07A9-4E77-B902-4EFC10BA676E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score"
+              DTS:DTSID="{D1574B42-7FB3-445B-8294-AC80D50BCA54}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Genres"
+              DTS:DTSID="{535A707A-98D1-4E78-8F3A-8F9E56E3CADA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type"
+              DTS:DTSID="{B8F88B3D-F4C2-4A23-BF6B-430749C3A1CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Episodes"
+              DTS:DTSID="{2CDDA86A-DAC7-40EB-A1F5-2DB5E8458A0C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Aired"
+              DTS:DTSID="{FA89B148-2C08-4B0E-95A0-1325C905FE7D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="End"
+              DTS:DTSID="{6ACD74B6-F0ED-43C4-A647-4696FC8D410F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="2000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Producers"
+              DTS:DTSID="{DE2AE8CD-7D3D-4C3E-BECF-86570F5C24B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Licensors"
+              DTS:DTSID="{ADF80094-BAF4-4630-A2D9-95868648E08F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Studios"
+              DTS:DTSID="{4C8F7AA6-71B5-4427-9E9A-94C9A02796A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Source"
+              DTS:DTSID="{A5935EE2-43D1-4EDA-8C88-93AD59FC9179}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Duration"
+              DTS:DTSID="{8169CBC4-E8B0-47A3-B1F0-6F2A598CAAFB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Rating"
+              DTS:DTSID="{35F39616-235C-4D55-95C3-DEE05CAC04F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ranked"
+              DTS:DTSID="{54EED066-056C-47B4-AAA5-DA6E6D4A2756}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Popularity"
+              DTS:DTSID="{84FB752C-6E11-4549-AD52-A983D8B54106}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Members"
+              DTS:DTSID="{4135BF2E-2EE3-414E-BAA0-92831D870C71}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Favorites"
+              DTS:DTSID="{8A3F0612-06F7-4B79-93B0-886966DA831E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Watching"
+              DTS:DTSID="{D418C283-875D-4250-AF2F-D9F6C97F9024}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Completed"
+              DTS:DTSID="{7511692B-4771-4E0B-8501-E4D83E173434}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="On-Hold"
+              DTS:DTSID="{00BF6F57-C024-4CE2-B8F4-267FCA065704}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropped"
+              DTS:DTSID="{DD9F7087-8DD3-4E95-86A4-6323ECEA3A64}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Plan to Watch"
+              DTS:DTSID="{246C61D0-3B0C-4003-8154-CB11267E5119}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-10"
+              DTS:DTSID="{04D6B0B0-42A4-4396-AFBD-ED5123E8A320}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-9"
+              DTS:DTSID="{835C7E97-4763-4BE5-8AE1-726189F454A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-8"
+              DTS:DTSID="{120093FE-558B-4B51-88A2-84EF74E7CC3E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-7"
+              DTS:DTSID="{EC3A21E0-7FA7-4BF4-9698-399A904CA4C3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-6"
+              DTS:DTSID="{0664A933-AD06-41F0-B93F-940AEB2D727B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-5"
+              DTS:DTSID="{4E6E7294-1062-47DD-A7EA-EF4FE52BC777}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-4"
+              DTS:DTSID="{83211A51-B514-4B7A-B6A8-279327E88A8C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-3"
+              DTS:DTSID="{18EA590E-6EED-41E7-8154-563BFCEB5865}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-2"
+              DTS:DTSID="{AF7BD8C2-54B9-4267-8696-6441A01388FA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-1"
+              DTS:DTSID="{ECC03553-95D5-4425-9FE2-A4BEE349A9C8}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0BA775A9-2280-4B36-BE30-879D8A9E226B}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Download\MyAnimeList-Database-master\MyAnimeList-Database-master\data\anime_data1.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MAL_ID"
+              DTS:DTSID="{0E3FD4AB-784F-42F9-9694-6EFCC5CC20ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{0E2AEB3D-8E46-4C00-AAAF-A78843DA5663}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score"
+              DTS:DTSID="{8CA0F42B-893A-4F23-A81F-E7FD1A5670FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Genres"
+              DTS:DTSID="{6222CA5B-6B2B-4195-B47C-E4BF65F3BE15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type"
+              DTS:DTSID="{3FDAE5BD-EF95-4EE0-B622-3BC9FB07B0EA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Episodes"
+              DTS:DTSID="{B5429B3D-F997-4D87-94BF-4F7D87DE8325}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Aired"
+              DTS:DTSID="{7C53447F-FEF1-4C72-845D-7C20A0FE0039}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="End"
+              DTS:DTSID="{95B0660A-BC92-482F-8CC8-445688D8E4E1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Producers"
+              DTS:DTSID="{BDBEAFDA-BB3B-4C41-BFE2-550B9F93B900}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Licensors"
+              DTS:DTSID="{38EB6B01-FCE1-4608-B87D-36C6177DB869}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Studios"
+              DTS:DTSID="{754A5F03-1E79-4D27-AE76-500C3A0BC4B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Source"
+              DTS:DTSID="{8DC10051-A628-4045-A387-C9323E553910}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Duration"
+              DTS:DTSID="{EB3CA2B6-D391-4B6A-90B6-68A549434D32}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Rating"
+              DTS:DTSID="{9325AFCC-1AA2-46B5-AC91-A4C36F85BB12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ranked"
+              DTS:DTSID="{99279074-094A-4755-BDD7-FAB94378CFBB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Popularity"
+              DTS:DTSID="{1F60CC14-8BE0-464B-AABE-A142B77AD1FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Members"
+              DTS:DTSID="{40835BDD-8F82-41BB-9EA4-76B1F0F79C30}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Favorites"
+              DTS:DTSID="{00BC9D3D-E1E6-4EB7-81FC-2DFF8474E216}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Watching"
+              DTS:DTSID="{64C98CB8-745E-4468-A1C1-9AF645C4B14C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Completed"
+              DTS:DTSID="{DD058D33-FB05-4BCD-B17F-980D30D3E3F9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="On-Hold"
+              DTS:DTSID="{58B788AD-9806-446A-B847-10D235867043}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropped"
+              DTS:DTSID="{38814F40-D2A0-45A1-866A-26D6A570C4EC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Plan to Watch"
+              DTS:DTSID="{EC62D00F-E297-404F-94BE-C18574FC2D19}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-10"
+              DTS:DTSID="{0C5402FF-AE79-4FCF-AD34-1F64AF1E4866}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-9"
+              DTS:DTSID="{84A55F2F-93D7-4220-B839-1103DCAD59A2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-8"
+              DTS:DTSID="{745BD009-DB2A-41A0-9AF5-71EB34FCD8C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-7"
+              DTS:DTSID="{E07DDA8D-4B02-44BB-98EB-63F06356E824}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-6"
+              DTS:DTSID="{8B274131-D71D-48C7-8E21-BF7EBF9FED5B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-5"
+              DTS:DTSID="{6E5ADC0D-7390-494B-B4D1-0FEB004DD841}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-4"
+              DTS:DTSID="{84A4C10B-A51A-44FD-A55E-A4B01DE1E517}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-3"
+              DTS:DTSID="{609B091D-725E-4E27-852C-66FF99D99355}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-2"
+              DTS:DTSID="{B76AA4A8-8E0F-40EE-95D0-E4BD525C28D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score-1"
+              DTS:DTSID="{F1562007-A05C-4CC3-9D6E-EEC789C35649}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\flat"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{f32530c4-3396-4a85-91f7-b12497343ca7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="flat"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\flat\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\flat\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\flat\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                      length="1000"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score]"
+                      name="Score"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Genres]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Genres]"
+                      length="1000"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Genres]"
+                      name="Genres"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Type]"
+                      length="50"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Type]"
+                      name="Type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Episodes]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Episodes]"
+                      length="50"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Episodes]"
+                      name="Episodes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Aired]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Aired]"
+                      length="50"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Aired]"
+                      name="Aired"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[End]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[End]"
+                      length="50"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[End]"
+                      name="End"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Producers]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Producers]"
+                      length="2000"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Producers]"
+                      name="Producers"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Licensors]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Licensors]"
+                      length="1000"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Licensors]"
+                      name="Licensors"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Studios]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Studios]"
+                      length="1000"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Studios]"
+                      name="Studios"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Source]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Source]"
+                      length="50"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Source]"
+                      name="Source"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Duration]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Duration]"
+                      length="50"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Duration]"
+                      name="Duration"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Rating]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Rating]"
+                      length="50"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Rating]"
+                      name="Rating"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Ranked]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ranked]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Ranked]"
+                      name="Ranked"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Popularity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Popularity]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Popularity]"
+                      name="Popularity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Members]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Members]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Members]"
+                      name="Members"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Favorites]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Favorites]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Favorites]"
+                      name="Favorites"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Watching]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Watching]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Watching]"
+                      name="Watching"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Completed]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Completed]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Completed]"
+                      name="Completed"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[On-Hold]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[On-Hold]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[On-Hold]"
+                      name="On-Hold"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Dropped]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Dropped]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Dropped]"
+                      name="Dropped"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Plan to Watch]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Plan to Watch]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Plan to Watch]"
+                      name="Plan to Watch"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-10]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-10]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-10]"
+                      name="Score-10"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-9]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-9]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-9]"
+                      name="Score-9"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-8]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-8]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-8]"
+                      name="Score-8"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-7]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-7]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-7]"
+                      name="Score-7"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-6]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-6]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-6]"
+                      name="Score-6"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-5]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-5]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-5]"
+                      name="Score-5"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-4]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-4]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-4]"
+                      name="Score-4"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-3]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-3]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-3]"
+                      name="Score-3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-2]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-2]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-2]"
+                      name="Score-2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-1]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-1]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-1]"
+                      name="Score-1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[MAL_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MAL_ID]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[MAL_ID]"
+                      name="MAL_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score]"
+                      dataType="r8"
+                      name="Score" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Genres]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="Genres" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Episodes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Episodes" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Aired]"
+                      dataType="dbTimeStamp"
+                      name="Aired" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[End]"
+                      dataType="dbTimeStamp"
+                      name="End" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Producers]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="Producers" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Licensors]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="Licensors" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Studios]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="Studios" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Source]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Source" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Duration]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Duration" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Rating]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Rating" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ranked]"
+                      dataType="i4"
+                      name="Ranked" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Popularity]"
+                      dataType="i4"
+                      name="Popularity" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Members]"
+                      dataType="i4"
+                      name="Members" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Favorites]"
+                      dataType="i4"
+                      name="Favorites" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Watching]"
+                      dataType="i4"
+                      name="Watching" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Completed]"
+                      dataType="i4"
+                      name="Completed" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[On-Hold]"
+                      dataType="i4"
+                      name="On-Hold" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Dropped]"
+                      dataType="i4"
+                      name="Dropped" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Plan to Watch]"
+                      dataType="i4"
+                      name="Plan to Watch" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-10]"
+                      dataType="i4"
+                      name="Score-10" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-9]"
+                      dataType="i4"
+                      name="Score-9" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-8]"
+                      dataType="i4"
+                      name="Score-8" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-7]"
+                      dataType="i4"
+                      name="Score-7" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-6]"
+                      dataType="i4"
+                      name="Score-6" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-5]"
+                      dataType="i4"
+                      name="Score-5" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-4]"
+                      dataType="i4"
+                      name="Score-4" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-3]"
+                      dataType="i4"
+                      name="Score-3" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-2]"
+                      dataType="i4"
+                      name="Score-2" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score-1]"
+                      dataType="i4"
+                      name="Score-1" />
+                    <externalMetadataColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MAL_ID]"
+                      dataType="i4"
+                      name="MAL_ID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\flat\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\flat\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\flat\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dataset]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\flat\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ID9RBP3.datatest]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ID9RBP3.datatest]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MAL_ID]"
+                      cachedDataType="i4"
+                      cachedName="MAL_ID"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MAL_ID]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[MAL_ID]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1000"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Score]"
+                      cachedDataType="r8"
+                      cachedName="Score"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Genres]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1000"
+                      cachedName="Genres"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Genres]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Genres]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Type"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Episodes]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Episodes"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Episodes]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Episodes]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Aired]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Aired"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Aired]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Aired]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[End]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="End"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[End]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[End]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Producers]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2000"
+                      cachedName="Producers"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Producers]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Producers]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Licensors]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1000"
+                      cachedName="Licensors"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Licensors]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Licensors]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Studios]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1000"
+                      cachedName="Studios"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Studios]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Studios]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Source]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Source]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Source]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Duration]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Duration"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Duration]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Duration]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Rating]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Rating"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Rating]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ranked]"
+                      cachedDataType="i4"
+                      cachedName="Ranked"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ranked]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Ranked]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Popularity]"
+                      cachedDataType="i4"
+                      cachedName="Popularity"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Popularity]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Popularity]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Members]"
+                      cachedDataType="i4"
+                      cachedName="Members"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Members]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Members]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Favorites]"
+                      cachedDataType="i4"
+                      cachedName="Favorites"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Favorites]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Favorites]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Watching]"
+                      cachedDataType="i4"
+                      cachedName="Watching"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Watching]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Watching]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Completed]"
+                      cachedDataType="i4"
+                      cachedName="Completed"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Completed]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Completed]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[On-Hold]"
+                      cachedDataType="i4"
+                      cachedName="On-Hold"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[On-Hold]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[On-Hold]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Dropped]"
+                      cachedDataType="i4"
+                      cachedName="Dropped"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dropped]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Dropped]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Plan to Watch]"
+                      cachedDataType="i4"
+                      cachedName="Plan to Watch"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Plan to Watch]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Plan to Watch]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Score-10]"
+                      cachedDataType="i4"
+                      cachedName="Score-10"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-10]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-10]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Score-9]"
+                      cachedDataType="i4"
+                      cachedName="Score-9"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-9]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-9]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Score-8]"
+                      cachedDataType="i4"
+                      cachedName="Score-8"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-8]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-8]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Score-7]"
+                      cachedDataType="i4"
+                      cachedName="Score-7"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-7]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-7]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Score-6]"
+                      cachedDataType="i4"
+                      cachedName="Score-6"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-6]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-6]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Score-5]"
+                      cachedDataType="i4"
+                      cachedName="Score-5"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-5]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-5]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Score-4]"
+                      cachedDataType="i4"
+                      cachedName="Score-4"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-4]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-4]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Score-3]"
+                      cachedDataType="i4"
+                      cachedName="Score-3"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-3]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-3]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Score-2]"
+                      cachedDataType="i4"
+                      cachedName="Score-2"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-2]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-2]" />
+                    <inputColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Score-1]"
+                      cachedDataType="i4"
+                      cachedName="Score-1"
+                      externalMetadataColumnId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-1]"
+                      lineageId="Package\flat\Flat File Source.Outputs[Flat File Source Output].Columns[Score-1]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MAL_ID]"
+                      dataType="i4"
+                      name="MAL_ID" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score]"
+                      dataType="r8"
+                      name="Score" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Genres]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="Genres" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Episodes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Episodes" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Aired]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Aired" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[End]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="End" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Producers]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2000"
+                      name="Producers" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Licensors]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="Licensors" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Studios]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="Studios" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Source]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Source" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Duration]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Duration" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Rating" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ranked]"
+                      dataType="i4"
+                      name="Ranked" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Popularity]"
+                      dataType="i4"
+                      name="Popularity" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Members]"
+                      dataType="i4"
+                      name="Members" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Favorites]"
+                      dataType="i4"
+                      name="Favorites" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Watching]"
+                      dataType="i4"
+                      name="Watching" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Completed]"
+                      dataType="i4"
+                      name="Completed" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[On-Hold]"
+                      dataType="i4"
+                      name="On-Hold" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dropped]"
+                      dataType="i4"
+                      name="Dropped" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Plan to Watch]"
+                      dataType="i4"
+                      name="Plan to Watch" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-10]"
+                      dataType="i4"
+                      name="Score-10" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-9]"
+                      dataType="i4"
+                      name="Score-9" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-8]"
+                      dataType="i4"
+                      name="Score-8" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-7]"
+                      dataType="i4"
+                      name="Score-7" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-6]"
+                      dataType="i4"
+                      name="Score-6" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-5]"
+                      dataType="i4"
+                      name="Score-5" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-4]"
+                      dataType="i4"
+                      name="Score-4" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-3]"
+                      dataType="i4"
+                      name="Score-3" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-2]"
+                      dataType="i4"
+                      name="Score-2" />
+                    <externalMetadataColumn
+                      refId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score-1]"
+                      dataType="i4"
+                      name="Score-1" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\flat\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\flat\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\flat\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\flat\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\flat\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\flat.Paths[Flat File Source Output]"
+              endId="Package\flat\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\flat\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\flat"
+          TopLeft="39.285714954746,63.4705891254452" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\flat">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\flat\OLE DB Destination"
+          TopLeft="342.076927504697,103.366514421442" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\flat\Flat File Source"
+          TopLeft="92,103" />
+        <EdgeLayout
+          Id="Package\flat.Paths[Flat File Source Output]"
+          TopLeft="243.2,123.983257210721">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98.876927504697,0"
+              Start="0,0"
+              End="91.376927504697,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="91.376927504697,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\flat\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

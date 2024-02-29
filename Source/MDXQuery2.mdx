@@ -1,0 +1,151 @@
+﻿// câu 1, cho biết điểm được chọn và thứ hạng của mỗi bộ anime
+select {[Measures].[Score], [Measures].[Ranked]} on Columns,
+[Dim Info].[Name].[Name] on Rows
+from [Data Warehouse];
+
+// câu 2: cho biết top 10 bộ anime được yêu thích nhất
+select [Measures].[Favorites] on Columns,
+TOPCount([Dim Info].[Name].[Name], 10,
+[Measures].[Favorites]) on Rows
+From [Data Warehouse];
+
+// câu 3 cho biết top 10 bộ anime không được ưa thích nhất 
+select [Measures].[Favorites] on Columns,
+BOTTOMCount([Dim Info].[Name].[Name], 10,
+[Measures].[Favorites]) on Rows
+From [Data Warehouse];
+
+//câu 4 cho biết top 10 bộ anime đã được xem xong nhiều nhất trong năm 2015 và 2016
+select [Measures].[Completed] on Columns,
+TOPCount([Dim Info].[Name].[Name], 10,
+[Measures].[Completed]) on Rows
+From [Data Warehouse]
+Where {[Dim Date].[Year Release].&[2016],
+[Dim Date].[Year Release].&[2015]};
+
+
+//5 tính tổng độ phổ biến theo từng độ tuổi và thể loại trừ độ tuổi (R+ - Mild Nudity)
+select {[Measures].[Popularity]  } on 0,
+non empty{([Dim Rating].[Rating].[Rating]-[Dim Rating].[Rating].&[R+ - Mild Nudity])
+		*[Dim Type].[Type].[Type]} on 1
+From [Data Warehouse];
+
+//câu 6 cho biết tên bộ anime thuộc cách phát sóng là TV và được sắp xếp theo thứ hạng
+select [Measures].[Ranked] on Columns,
+non empty{Order ([Dim Info].[Name].[Name],
+		[Measures].[Ranked],
+		ASC )} on Rows
+From [Data Warehouse]
+where {[Dim Type].[Type].&[TV]};
+
+//câu 7 cho biết những bộ anime có số lượng dự định xem giảm dần và điểm số và thuộc cách phát sóng là Movie 
+select {[Measures].[Plan To Watch], [Measures].[Score]} on Columns,
+non empty Order ([Dim Info].[Name].[Name],
+[Measures].[Plan To Watch],
+DESC) on Rows
+From [Data Warehouse]
+where {[Dim Type].[Type].&[Movie]};
+
+
+//câu 8 cho biết tên từng bộ anime theo số người quan tâm giảm dần và có tên bắt đầu bằng ký tự 'D'
+select {[Measures].[Members]} on Columns,
+{Filter (
+Order ([Dim Info].[Name].[Name],
+[Measures].[Members],
+DESC),Left([Dim Info].[Name].CurrentMember.Name, 1) = "D")}
+on Rows
+From [Data Warehouse];
+
+//câu 9 cho biết tên bộ có thời lượng 24 phút và số người quan tâm lớn hơn 100000
+select {[Measures].[Members]} on Columns,
+non empty{Filter (
+Order ({[Dim Info].[Name].[Name]}*{[Dim Duration].[Duration].[Duration]},
+[Measures].[Members],
+DESC),Left([Dim Duration].[Duration].CurrentMember.Name, 2) = '24'
+and [Measures].[Members] > 1000000
+)}
+on Rows
+From [Data Warehouse];
+
+//câu 10 cho biết top 2 bộ anime phổ biến mỗi năm từ năm 2000 đến năm 2019
+Select [Measures].[Popularity] on columns,
+Non Empty{
+	Generate(
+		[Dim Date].[Year Release].&[2000]:[Dim Date].[Year Release].&[2019],
+		topCount(
+			Filter([Dim Date].[Year Release].currentmember*[Dim Info].[Name].children,
+				Not IsEmpty([Measures].[Popularity]))
+			,2
+			,[Measures].[Popularity])
+		)}
+on Rows
+From [Data Warehouse];
+
+//câu 11 cho biết những bộ anime có số người đang xem từ khoảng 30000 đến 300000 người [Measures].[Members]
+select [Measures].[Watching] on 0,
+{Intersect(
+			{Filter([Dim Info].[Name].children, [Measures].[Watching] >= 30000)},
+			{Filter([Dim Info].[Name].children, [Measures].[Watching] <= 300000)}
+			)
+}
+on 1
+From [Data Warehouse];
+
+//câu 12 Cho biết tên bộ anime có thể loại Comedy và Romance và số lượng người yêu thích từng bộ
+with member [Measures].[comedyInName] as
+InStr([Dim Info].[Genres].CurrentMember.Name, "Comedy")
+
+member [Measures].[romanceInName] as
+InStr([Dim Info].[Genres].CurrentMember.Name, "Romance")
+
+SELECT
+NON EMPTY {[Measures].[Favorites]} 
+ON COLUMNS,
+Filter({
+		[Dim Info].[Name].[Name]*[Dim Info].[Genres].[Genres]}, 
+		[Measures].[comedyInName] >= 1 
+		AND 
+		[Measures].[romanceInName] >= 1  )
+ON ROWS 
+From [Data Warehouse];
+
+
+
+//câu 13 Cho biết số lượng người dự định xem những bộ anime có nguyên tác là Manga 
+//mà thể loại phim không có Horror và Mystery
+with member[Measures].[horrorInName] as
+InStr([Dim Info].[Genres].CurrentMember.Name, "Horror")
+
+member [Measures].[mysteryInName] as
+InStr([Dim Info].[Genres].CurrentMember.Name, "Mystery")
+
+SELECT
+NON EMPTY {[Measures].[Plan To Watch]} ON COLUMNS,
+NON EMPTY Filter({
+		[Dim Source].[Source Name].[Source Name]*[Dim Info].[Name].[Name]*[Dim Info].[Genres].[Genres]
+		}, 
+		[Dim Source].[Source Name].CurrentMember.Name = 'Manga'
+		and measures.horrorInName =0
+		and measures.mysteryInName =0 ) on rows
+From [Data Warehouse];
+
+
+//câu 14 theo từng tháng, quý, năm, liệt kê loại phim và số lượng người xem
+Select {[Dim Type].[Type].children*[Measures].[Watching]} on columns,
+non empty {
+	DRILLDOWNLEVEL(
+		DRILLDOWNLEVEL([Dim Date].[Time Release].[Year Release]))		
+}ON ROWS  
+From [Data Warehouse];
+
+
+
+//câu 15 Liệt kê tên và số tập có cách phát sóng là TV và từ 24 tập trờ lên
+
+select {[Measures].[Episodes]} on 0,
+non empty { 
+	filter([Dim Type].[Type].children*[Dim Info].[Name].children,
+			[Dim Type].[Type].CurrentMember.Name = "TV"
+			and [Measures].[Episodes] >= 24)
+	}on 1
+From [Data Warehouse];

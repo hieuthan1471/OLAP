@@ -1,0 +1,96 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>MultidimensionalProject1</Database>
+    <Server>DESKTOP-ID9RBP3</Server>
+    <ConnectionString>Data Source=DESKTOP-ID9RBP3;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>1Lk+8cBjc5fRONDFemS3dpLQyEk=5/19/2022 22:54:585/19/2022 22:54:58</TimeStamp>
+        <ID>
+          <String>Data Warehouse</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>O6psBJA+LNvAzosZUH37bzayhu0=5/19/2022 22:55:085/19/2022 22:55:08</TimeStamp>
+        <ID>
+          <String>Data Warehouse</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>xSQE0aO6mzkQZOSIuYqubeimVRg=5/19/2022 22:56:425/19/2022 22:55:24</TimeStamp>
+        <ID>
+          <String>Dim Type</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>4kmioA52yguwhieKyL7bxK3/UtE=5/19/2022 22:56:425/19/2022 22:55:24</TimeStamp>
+        <ID>
+          <String>Dim Rating</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>MbVeb/My06uIFHF9XWDRTOeRTBo=5/19/2022 22:56:425/19/2022 22:55:24</TimeStamp>
+        <ID>
+          <String>Dim Duration</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>adirlaXAdkGbx6/Ooqs06gQlnSQ=5/19/2022 22:56:425/19/2022 22:55:24</TimeStamp>
+        <ID>
+          <String>Dim Source</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>24bw/3fHN9/qkm8imIlMRnmFVV0=5/22/2022 16:59:365/19/2022 22:55:24</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>mCtjMBLvGpt+NvW414i+Ups+wZc=5/19/2022 22:56:425/19/2022 22:55:24</TimeStamp>
+        <ID>
+          <String>Dim Info</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>mBzkKH6xYj87NRBNgeH2hB08Ux4=5/21/2022 13:50:435/19/2022 22:55:24pUflhKvNqHwHcsRmE6JuhWqFW68=5/19/2022 22:55:245/19/2022 22:55:24</TimeStamp>
+        <ID>
+          <String>Data Warehouse</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>t4AIEyWRTPQLYz/yHCHGua3mJ3M=5/14/2022 00:21:135/14/2022 00:21:13</TimeStamp>
+      <ID>
+        <String>MultidimensionalProject1</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2022-05-22T12:30:24.38Z</LastDeployed>
+</DeploymentSnapshot>
